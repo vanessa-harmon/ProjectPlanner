@@ -1,3 +1,21 @@
 nav {
+    background-color: #BFB304;
+    padding: 1px;
+}
+
+a {
+    text-decoration: none;
+    color: #0468BF;
+}
+
+a:hover {
+    color: #465902;
+}
+
+table tr:nth-child(even) {
     background-color: #D9C8B4;
+}
+
+h1 {
+    color: #0468BF;
 }
