@@ -1,39 +1,250 @@
 * {
-    margin: 10;
-    padding: 10;
-    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    /* background-color:#659DBD; */
+}
+
+body {
+    background-color: #056CF2;
+}
+
+.container {
+    width: 100%;
+}
+
+.box {
+    width: fit-content;
+    position: relative;
+    text-align: left;
+    z-index: 1;
+    opacity: 0;
+    left: -500px;
+    pointer-events: none;
+    transition: 0.3s;
+}
+
+.active.box {
+    opacity: 1;
+    left: 0px;
+    pointer-events: fill;
+    background-color: #29A649;
+}
+
+main {
+    margin-left: 250px;
+}
+
+.menu_icon_box {
+    z-index: 2;
+    width: fit-content;
+    height: auto;
+    margin: 30px;
+    position: absolute;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.line1, .line2, .line3 {
+    width: 40px;
+    height: 4px;
+    margin: 10px 8px;
+    background-color: rgb(0, 0, 0);
+    border-radius: 50px;
+}
+
+.active .line1 {
+    transform: translate(0px, 15px)rotate(45deg);
+}
+
+.active .line2 {
+    opacity: 0;
+}
+
+.active .line3 {
+    transform: translate(0px, -15px)rotate(-45deg);
 }
 
 nav {
-    height: 100%;
-    width: 150px;
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Stay on top */
-    top: 0; /* Stay at the top */
-    left: 0;
-    background-color: #BFB304;
+    padding-top: 100px;
+    /* color: #0554F2; */
 }
 
+nav ul {
+    margin: 0px 3px;
+}
 
-main {
-    margin-left: 160px;
-    padding: 20px;
+nav ul li {
+    list-style: none;
+    margin-bottom: 30px;
+    transition: 0.3s;
+}
+
+nav ul li:hover{
+    background-color:#A7D9B3;
+    border-radius: 8px;
+}
+
+nav ul li a {
+    color: #0554F2;
+    font-size: 28px;
+    padding: 10px 30px;
+    display: block;
+    text-decoration: none;
+}
+
+h2 {
+    color: #0554F2;
+}
+
+input {
+    height: 1.5em;
+    margin: 0;
+    padding: .25em .5em;
   }
 
 
+  table {
+    width: 50%;
+    text-align: center;
+  }
+
+
+  /* Make the login and sign-up forms look nicer */
+.login-form,
+.signup-form {
+  background-color: #F2F1F0;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  margin: auto;
+  max-width: 400px;
+  padding: 2em;
+}
+
+/* Make the task and projects forms look nicer */
+.task-form,
+.project-form {
+  background-color:#F2F1F0;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  margin: auto;
+  max-width: 600px;
+  padding: 2em;
+}
+
+
+/* Make all of the headers the same */
+.task-form h1,
+.my-tasks-list h1,
+.login-form h1,
+.signup-form h1,
+.project-list h1,
+.project-form h1,
+.project-detail h1 {
+  margin-top: 0;
+  color:#0554F2;
+}
+
+/* Add spacing to the section of the project detail */
+.project-detail h2 {
+  margin-top: 2em;
+}
+
+/* Standardize form layout using grid */
+.task-form p,
+.login-form p,
+.signup-form p,
+.project-form p {
+  display: grid;
+  align-items: center;
+  column-gap: 10px;
+  grid-template-columns: 100px 1fr;
+}
+
+/* Standardize help text positions in the grid */
+.task-form p .helptext,
+.login-form p .helptext,
+.signup-form p .helptext,
+.project-form p .helptext {
+  grid-column-start: 2;
+  grid-column-end: 3;
+}
+
+/* Add a nice box around the lists and details */
+.my-tasks-list,
+.project-list,
+.project-detail {
+  background-color: #A7D9B3;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  margin: auto;
+  max-width: 75%;
+  padding: 2em;
+}
+
+/* Add padding to the table header and table datum tags */
+.my-tasks-list th,
+.my-tasks-list td,
+.project-list th,
+.project-list td,
+.project-detail th,
+.project-detail td {
+  padding: .5em;
+}
+
 a {
     text-decoration: none;
-    color: #0468BF;
+    color: #0554F2;
 }
 
 a:hover {
-    color: #465902;
+    color: aliceblue;
 }
 
-table tr:nth-child(even) {
-    background-color: #D6D58E;
+/* CSS */
+button {
+    align-self: center;
+    background-color: #29A649;
+    background-size: 4px 3px;
+    border-radius: 15px 225px 255px 15px;
+    border: 2px solid;
+    box-shadow: rgba(0, 0, 0, .2) 15px 28px 25px -18px;
+    box-sizing: border-box;
+    color: #0554F2;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 16px;
+    line-height: 23px;
+    margin-bottom: 16px;
+    margin-top: 20px;
+    outline: none;
+    padding: 14px;
+    text-decoration: none;
+    transition: all 235ms ease-in-out;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
 }
 
-h1 {
-    color: #0468BF;
+button:hover {
+  box-shadow: rgba(0, 0, 0, .3) 2px 8px 8px -5px;
+  transform: translate3d(0, 2px, 0);
+}
+
+button:focus {
+  box-shadow: rgba(0, 0, 0, .3) 2px 8px 4px -6px;
+}
+
+p {
+    padding: 12px;
+}
+
+
+footer {
+    background-color: #29A649;
+    padding: 24px 0px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
 }

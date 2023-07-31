@@ -11,10 +11,19 @@
     <link rel="stylesheet" href="{% static 'css/projects.css' %}">
 </head>
 <body>
-    <header>
-        <nav>
+    <div class="container">
+        <div class="menu_icon_box">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+            <div class="box">
+            <header>
+                {% if user.is_authenticated %}
+                <h2>Hello, {{ user.username }}</h2>
+                {% endif %}
+            </header>
+            <nav>
             {% if user.is_authenticated %}
-            <h2>Hello, {{ user.username }}</h2>
             <ul>
                 <li><a href="{% url 'show_my_tasks' %}">My tasks</a></li>
                 <li><a href="{% url 'list_projects' %}">My projects</a></li>
@@ -24,8 +33,33 @@
                 <li><a href="{% url 'signup' %}">Signup</a></li>
             {% endif %}
             </ul>
-        </nav>
-    </header>
+            </nav>
+            </div>
+        </div>
+    </div>
+    <div class="main-content">
     {% block content %}{% endblock content %}
+    </div>
+    <footer>
+        &copy; 2023
+    </footer>
 </body>
+
+    <script>
+        let menu_icon_box = document.querySelector(".menu_icon_box");
+        let box = document.querySelector(".box");
+
+        menu_icon_box.onclick = function() {
+            menu_icon_box.classList.toggle("active");
+            box.classList.toggle("active");
+        }
+
+        document.onclick = function(e){
+            if (!menu_icon_box.contains(e.target) && !box.contains(e.target)) {
+                menu_icon_box.classList.remove("active");
+                box.classList.remove("active");
+            }
+        }
+    </script>
+
 </html>
