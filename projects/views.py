@@ -35,3 +35,13 @@ def create_project(request):
         "form": form,
     }
     return render(request, "projects/create.html", context)
+
+
+def search_projects(request):
+    if request.method == "POST":
+        searched = request.POST["searched"]
+        projects = Project.objects.filter(owner=request.user, name__contains=searched)
+        return render(request, 'projects/search_projects.html', {"searched": searched, "projects": projects})
+
+    else:
+        return render(request, 'projects/search_projects.html', {})

@@ -9,6 +9,10 @@
         {% block title %}{% endblock title %}
     </title>
     <link rel="stylesheet" href="{% static 'css/projects.css' %}">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="container">
@@ -20,10 +24,16 @@
             <header>
                 {% if user.is_authenticated %}
                 <h2>Hello, {{ user.username }}</h2>
+                <form method="POST" action="{% url 'search_projects' %}">
+                    {% csrf_token %}
+                    <input type="search" placeholder="Search projects" name="searched" id="search-bar">
+                    <button class="search-button" type="submit">Search</button>
+                </form>
                 {% endif %}
             </header>
             <nav>
             {% if user.is_authenticated %}
+
             <ul>
                 <li><a href="{% url 'show_my_tasks' %}">My tasks</a></li>
                 <li><a href="{% url 'list_projects' %}">My projects</a></li>
@@ -40,9 +50,6 @@
     <div class="main-content">
     {% block content %}{% endblock content %}
     </div>
-    <footer>
-        &copy; 2023
-    </footer>
 </body>
 
     <script>
@@ -60,6 +67,10 @@
                 box.classList.remove("active");
             }
         }
+
+        document.getElementById('search-bar').addEventListener('click', function (event) {
+            event.stopPropagation();
+        });
     </script>
 
 </html>
