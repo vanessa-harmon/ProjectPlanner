@@ -2,11 +2,15 @@
 * {
     padding: 0;
     margin: 0;
-    /* background-color:#659DBD; */
 }
 
 body {
     background-color: #056CF2;
+    background-image: radial-gradient(#fff 10%, transparent 11%),
+    radial-gradient(#fff 10%, transparent 11%);
+    background-size: 500px 500px;
+    background-position: 0 0, 250px 250px;
+    /* background-repeat: repeat; */
 }
 
 .container {
@@ -22,6 +26,7 @@ body {
     left: -500px;
     pointer-events: none;
     transition: 0.3s;
+    font-family: 'Dekko', cursive;
 }
 
 .active.box {
@@ -39,7 +44,7 @@ main {
     z-index: 2;
     width: fit-content;
     height: auto;
-    margin: 30px;
+    margin: 0 0 0 30px;
     position: absolute;
     border-radius: 4px;
     cursor: pointer;
@@ -50,7 +55,7 @@ main {
     width: 40px;
     height: 4px;
     margin: 10px 8px;
-    background-color: rgb(0, 0, 0);
+    background-color: #F2F1F0;
     border-radius: 50px;
 }
 
@@ -67,7 +72,7 @@ main {
 }
 
 nav {
-    padding-top: 50px;
+    padding-top: 24px;
 }
 
 nav ul {
@@ -119,6 +124,8 @@ table {
   margin: 24px auto;
   max-width: 400px;
   padding: 2em;
+  font-family: 'Dekko', cursive;
+  color: #0554F2;
 }
 
 /* Make the task and projects forms look nicer */
@@ -130,6 +137,8 @@ table {
   margin: 24px auto;
   max-width: 600px;
   padding: 2em;
+  font-family: 'Dekko', cursive;
+  color: #0554F2;
 }
 
 
@@ -143,6 +152,7 @@ table {
 .project-detail h1 {
   margin-top: 0;
   color:#0554F2;
+  font-family: 'Dekko', cursive;
 }
 
 /* Add spacing to the section of the project detail */
@@ -180,6 +190,8 @@ table {
   margin: 24px auto;
   max-width: 75%;
   padding: 2em;
+  font-family: 'Dekko', cursive;
+  min-height: 750px;
 }
 
 /* Add padding to the table header and table datum tags */
@@ -204,7 +216,7 @@ table {
 }
 
 a:hover {
-    color: aliceblue;
+    color: #F2F1F0;
 }
 
 /* CSS */
@@ -214,7 +226,6 @@ a:hover {
 .project-form button {
     align-self: center;
     background-color: #29A649;
-    /* background-size: 4px 3px; */
     border-radius: 4px;
     border: 2px solid;
     box-shadow: rgba(0, 0, 0, .2) 15px 28px 25px -18px;
@@ -265,10 +276,9 @@ p {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     margin: 24px auto;
     max-width: 75%;
-    /* max-height: 75%; */
     padding: 2em;
-    /* padding-top: 50px; */
-    font-family: 'Merriweather', serif;
+    font-family: 'Dekko', cursive;
+    min-height: 750px;
 }
 
 
@@ -279,4 +289,48 @@ p {
 
 .searchpage a:hover {
     color: #29A649;
+}
+
+.search {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    background: #F2F1F0;
+    border-radius: 60px;
+    transition: 0.5s;
+    box-shadow: 0 0 0 5px #F2F1F0;
+}
+/* .icon */
+.search {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    background:#F2F1F0;
+    border-radius: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    cursor: pointer;
+}
+
+.search::before {
+    content: '';
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    border: 3px solid #0554F2;
+    border-radius: 50%;
+    transform: translate(-4px,-4px);
+}
+
+.search::after {
+    content: '';
+    position: absolute;
+    width: 3px;
+    height: 12px;
+    background: #0554F2;
+    transform: translate(6px,6px) rotate(315deg);
 }
