@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    {{ task.name }}
+{% endblock title %}
+
+{% block content %}
+<main>
+    <div class="task-detail">
+        <h1>{{ task.name }}</h1>
+        <p><a href="{% url 'add_notes_to_task' task.id %}">Add Notes</a></p>
+        {% if task.notes %}
+        <p>Notes: {{ task.notes }}</p>
+        <!-- <p>Start Date: {{ task.start_date }}</p>
+        <p>Due Date: {{ task.due_date }}</p>
+        <p>Is Completed: {{ task.is_completed|yesno }}</p> -->
+        {% else %}
+            <p>You have no notes for this task</p>
+        {% endif %}
+    </div>
+</main>
+{% endblock content %}

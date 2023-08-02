@@ -8,7 +8,7 @@
 <main>
     <div class="searchpage">
     {% if searched %}
-    <h1>You searched for {{ searched }}</h1>
+    <h1>Search Results For "{{ searched }}"</h1>
     <br/>
     {% for project in projects %}
         <a href="{% url 'show_project' project.id %}" class="searchlinks">{{ project }}</a><br/>

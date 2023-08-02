@@ -7,7 +7,7 @@
 body {
     background-color: #056CF2;
     background-image: radial-gradient(#F2F1F0 10%, transparent 11%),
-    radial-gradient(#fff 10%, transparent 11%);
+    radial-gradient(#F2F1F0 10%, transparent 11%);
     background-size: 500px 500px;
     background-position: 0 0, 250px 250px;
     /* background-repeat: repeat; */
@@ -105,20 +105,18 @@ h2 {
     color: #0554F2;
 }
 
-/* input {
-    height: 1.5em;
-    margin: 0;
-    padding: .25em .5em;
-  } */
-
-
-table {
-    width: 50%;
+.my-tasks-list table,
+.project-detail table {
+    width: 100%;
     text-align: center;
+    padding: 12px;
   }
 
+.project-list table {
+    text-align: center;
+}
 
-  /* Make the login and sign-up forms look nicer */
+
 .login-form,
 .signup-form {
   background-color: #F2F1F0;
@@ -133,7 +131,8 @@ table {
 
 /* Make the task and projects forms look nicer */
 .task-form,
-.project-form {
+.project-form,
+.add-note-form {
   background-color:#F2F1F0;
   border-radius: 4px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
@@ -152,22 +151,22 @@ table {
 .signup-form h1,
 .project-list h1,
 .project-form h1,
-.project-detail h1 {
+.project-detail h1,
+.task-detail h1,
+.add-note-form h1,
+.searchpage h1 {
   margin-top: 0;
-  color:#0554F2;
+  color: #0554F2;
   font-family: 'Dekko', cursive;
 }
 
-/* Add spacing to the section of the project detail */
-.project-detail h2 {
-  margin-top: 2em;
-}
 
 /* Standardize form layout using grid */
 .task-form p,
 .login-form p,
 .signup-form p,
-.project-form p {
+.project-form p,
+.add-note-form p {
   display: grid;
   align-items: center;
   column-gap: 10px;
@@ -178,7 +177,8 @@ table {
 .task-form p .helptext,
 .login-form p .helptext,
 .signup-form p .helptext,
-.project-form p .helptext {
+.project-form p .helptext,
+.add-note-form p .helptext {
   grid-column-start: 2;
   grid-column-end: 3;
 }
@@ -186,7 +186,8 @@ table {
 /* Add a nice box around the lists and details */
 .my-tasks-list,
 .project-list,
-.project-detail {
+.project-detail,
+.task-detail {
   background-color: #A7D9B3;
   border-radius: 4px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
@@ -213,7 +214,9 @@ table {
 .signup-form a,
 .project-list a,
 .project-form a,
-.project-detail a {
+.project-detail a,
+.task-detail a,
+.add-note-form a {
     text-decoration: none;
     color: #0554F2;
 }
@@ -226,7 +229,8 @@ a:hover {
 .task-form button,
 .login-form button,
 .signup-form button,
-.project-form button {
+.project-form button,
+.add-note-form button {
     align-self: center;
     background-color: #29A649;
     border-radius: 4px;
@@ -252,7 +256,8 @@ a:hover {
 .task-form button:hover,
 .login-form button:hover,
 .signup-form button:hover,
-.project-form button:hover {
+.project-form button:hover,
+.add-note-form button:hover {
   box-shadow: rgba(0, 0, 0, .3) 2px 8px 8px -5px;
   transform: translate3d(0, 2px, 0);
 }
@@ -260,7 +265,8 @@ a:hover {
 .task-form button:focus,
 .login-form button:focus,
 .signup-form button:focus,
-.project-form button:focus {
+.project-form button:focus,
+.add-note-form button:focus {
   box-shadow: rgba(0, 0, 0, .3) 2px 8px 4px -6px;
 }
 
@@ -291,7 +297,7 @@ p {
 }
 
 .searchpage a:hover {
-    color: #29A649;
+    color: #F2F1F0;
 }
 
 .search {
