@@ -8,38 +8,37 @@
     <title>
         {% block title %}{% endblock title %}
     </title>
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
     <link rel="stylesheet" href="{% static 'css/projects.css' %}">
-
+    <link rel="stylesheet" href="{% static 'css/accounts.css' %}">
+    <link rel="stylesheet" href="{% static 'css/projectslist.css' %}">
+    <link rel="stylesheet" href="{% static 'css/detail.css' %}">
+    <link rel="stylesheet" href="{% static 'css/forms.css' %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Dekko&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
 </head>
-<body>
-    <div class="container">
-        <div class="menu_icon_box">
-            <div class="line1"></div>
-            <div class="line2"></div>
-            <div class="line3"></div>
-            <div class="box">
-            <header>
-                {% if user.is_authenticated %}
-                <h1 class="hello">Hello, {{ user.username }}</h1>
-                {% endif %}
-                <nav>
-                    {% if user.is_authenticated %}
-                    <ul>
-                        <li><a href="{% url 'show_my_tasks' %}">My tasks</a></li>
-                        <li><a href="{% url 'list_projects' %}">My projects</a></li>
-                        <li><a href="{% url 'logout' %}">Logout</a></li>
-                    {% else %}
-                        <li><a href="{% url 'login' %}">Login</a></li>
-                        <li><a href="{% url 'signup' %}">Signup</a></li>
-                    {% endif %}
-                    </ul>
-                </nav>
-            </div>
-            </header>
+<body class="base">
+    <div class='menu-container'>
+    {% if user.is_authenticated %}
+    <div class="menu_icon_box">
+        <div class="line1"></div>
+        <div class="line2"></div>
+        <div class="line3"></div>
+    </div>
+    <h1 class="hello">Hello, {{ user.username }}!</h1>
+        <div class="box">
+        <header>
+            <nav>
+                <ul>
+                    <li><a href="{% url 'show_my_tasks' %}">My tasks</a></li>
+                    <li><a href="{% url 'list_projects' %}">My projects</a></li>
+                    <li><a href="{% url 'logout' %}">Logout</a></li>
+                </ul>
+            </nav>
         </div>
+        </header>
     </div>
     <div class="search">
         <div class="icon"></div>
@@ -53,11 +52,11 @@
         <span class="clear" onclick="document.getElementById('search-bar').value = ''"></span>
     </div>
 
-    <div class="main-content">
-    {% block content %}{% endblock content %}
-    </div>
-</body>
+    {% endif %}
 
+    {% block content %}{% endblock content %}
+
+</body>
     <script>
         let menu_icon_box = document.querySelector(".menu_icon_box");
         let box = document.querySelector(".box");
@@ -85,5 +84,4 @@
         };
 
     </script>
-
 </html>

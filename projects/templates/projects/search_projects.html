@@ -7,15 +7,23 @@
 {% block content %}
 <main>
     <div class="searchpage">
-    {% if searched %}
+    {% if projects %}
     <h1>Search Results For "{{ searched }}"</h1>
-    <br/>
-    {% for project in projects %}
-        <a href="{% url 'show_project' project.id %}" class="searchlinks">{{ project }}</a><br/>
-    {% endfor %}
-
-    {% else %}
-        <h1>Hey! You forgot to search for a project...</h1>
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        {% for project in projects %}
+        <div class="col">
+            <div class="card h-100 text-white bg-info mb-3">
+            <div class="card-body">
+                <h5 class="card-title"><a href="#"><a href="{% url 'show_project' project.id %}">{{ project.name }}</a></h5>
+                <p class="card-text">{{ project.description }}</p>
+            </div>
+            </div>
+        </div>
+        {% endfor %}
+        </div>
+        {% else %}
+        <h1>Oops! Looks like we couldn't find any matching results. But here's a cute kitten</h1>
+        <img src="http://placekitten.com/200/300" alt="kitten">
     {% endif %}
     </div>
 </main>

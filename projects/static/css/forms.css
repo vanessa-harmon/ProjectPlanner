@@ -1,0 +1,68 @@
+.task-form,
+.project-form,
+.add-note-form {
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  margin: 24px auto;
+  max-width: 600px;
+  padding: 2em;
+  font-family: 'Playfair Display', serif;
+  color: #4d93e5;
+  text-align: center;
+}
+
+.task-form h1,
+.project-form h1,
+.add-note-form h1 {
+    margin: 0 0 2rem;
+    color: #4d93e5;
+    font-family: 'Playfair Display', serif;
+}
+
+.task-form p,
+.project-form p,
+.add-note-form p {
+  display: grid;
+  align-items: center;
+  column-gap: 10px;
+  grid-template-columns: 100px 1fr;
+}
+
+.task-form button,
+.project-form button,
+.add-note-form button {
+    align-self: center;
+    background-color: #d0e2f8;
+    border-radius: 4px;
+    border: 2px solid #d6515e;
+    border-radius: 2rem;
+    color: #4d93e5;
+    box-shadow: rgba(0, 0, 0, .2) 15px 28px 25px -18px;
+    box-sizing: border-box;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 16px;
+    line-height: 23px;
+    margin-bottom: 16px;
+    margin-top: 20px;
+    outline: none;
+    padding: 14px;
+    text-decoration: none;
+    transition: all 235ms ease-in-out;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+
+.task-form button:hover,
+.project-form button:hover,
+.add-note-form button:hover {
+  box-shadow: rgba(0, 0, 0, .3) 2px 8px 8px -5px;
+  transform: translate3d(0, 2px, 0);
+}
+
+.task-form button:focus,
+.project-form button:focus,
+.add-note-form button:focus {
+  box-shadow: rgba(0, 0, 0, .3) 2px 8px 4px -6px;
+}

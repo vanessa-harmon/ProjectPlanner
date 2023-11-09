@@ -1,0 +1,60 @@
+.project-detail,
+.task-detail,
+.my-tasks-list {
+    padding: 2rem 2rem;
+    margin: 1rem;
+    color: #4d93e5;
+}
+
+.table-container {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    padding: 0 1rem;
+}
+
+thead {
+    background-color: #f2f2f2;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #7baeef;
+    color: white;
+}
+
+tbody tr:hover {
+    background-color: #f5f5f5;
+}
+
+.taskBtn,
+.notesBtn {
+    border-radius: 2rem;
+    border: .1rem solid #d6515e;
+    margin: 0 0 1rem;
+    background-color: #d0e2f8;
+}
+
+.taskBtn a:hover,
+.notesBtn a:hover {
+    text-decoration: none;
+}
+
+.notes {
+    word-wrap: break-word;
+    color: #4d93e5;
+    border-color: #d6515e;
+}
+
+.task-detail {
+    text-align: center;
+}

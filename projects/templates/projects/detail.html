@@ -9,8 +9,7 @@
     <div class="project-detail">
         <h1>{{ project.name }}</h1>
         <p>{{ project.description }}</p>
-        <h2>Tasks</h2>
-        <p><a href="{% url 'create_task' %}">Create a new task</a></p>
+        <h2>Tasks</h2> <button class='taskBtn'><a href="{% url 'create_task' %}">Create a new task</a></button>
         {% if project.tasks.all %}
         <table>
             <thead>

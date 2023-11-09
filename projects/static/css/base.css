@@ -1,0 +1,246 @@
+.base  {
+    width: 90%;
+    max-width: 75rem;
+    height: 75px;
+    background-color: #D0E2F8;
+    font-family: 'Playfair Display', serif;
+}
+
+.menu-container {
+    position: relative;
+}
+
+.box {
+    position: absolute;
+    width: fit-content;
+    height: fit-content;
+    z-index: 1;
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.3s;
+    text-align: center;
+    top: 100%;
+    left: 0;
+    padding: 0 1rem;
+}
+
+.box a {
+    display: inline-block;
+}
+
+.box a:hover {
+    text-decoration: none;
+    background-color: #d0e2f8;
+}
+
+.active.box {
+    opacity: 1;
+    pointer-events: fill;
+    background-color: #4c94e6;
+}
+
+.menu_icon_box {
+    z-index: 2;
+    width: fit-content;
+    height: auto;
+    margin: 0 1rem;
+    padding: 0 1rem;
+    position: absolute;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.line1, .line2, .line3 {
+    width: 40px;
+    height: 4px;
+    margin: 10px 8px;
+    background-color: #d6515e;
+    border-radius: 50px;
+    left: 20px;
+}
+
+.active .line1 {
+    transform: translate(0px, 15px)rotate(45deg);
+}
+
+.active .line2 {
+    opacity: 0;
+}
+
+.active .line3 {
+    transform: translate(0px, -15px)rotate(-45deg);
+}
+
+nav ul li {
+    list-style: none;
+    margin-bottom: 30px;
+    transition: 0.3s;
+}
+
+nav ul li:hover{
+    background-color:#D0E2F8;
+}
+
+nav ul li a {
+    color: #d6515e;
+    font-size: 28px;
+    padding: 10px 30px;
+    display: block;
+    text-decoration: none;
+    text-wrap: nowrap;
+    text-align: left;
+}
+
+.hello {
+    color:#195db6;
+    margin: 2rem 6rem;
+}
+
+.searchpage {
+    background-color: #d0e2f8;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    margin: 24px auto;
+    max-width: 75%;
+    padding: 2em;
+    min-height: 750px;
+    text-align: center;
+}
+
+.searchpage img {
+    height: 400px;
+}
+
+
+.searchlinks {
+    color: #d6515e;
+    text-decoration: none;
+}
+
+.searchpage a:hover {
+    color: #F2F1F0;
+}
+
+.search {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    background: #F2F1F0;
+    border-radius: 60px;
+    transition: 0.5s;
+    box-shadow: 0 0 0 5px #F2F1F0;
+    overflow: hidden;
+}
+
+.search .icon {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    background:#D0E2F8;
+    border-radius: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    cursor: pointer;
+}
+
+.search.active {
+    width: 300px;
+}
+
+.search .icon::before {
+    content: '';
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    border: 3px solid #195db6;
+    border-radius: 50%;
+    transform: translate(-4px,-4px);
+}
+
+.search .icon::after {
+    content: '';
+    position: absolute;
+    width: 3px;
+    height: 12px;
+    background: #0554F2;
+    transform: translate(6px,6px) rotate(315deg);
+}
+
+.search .input {
+    position: fixed;
+    top: 30px;
+    right: 30px;
+    width: 0px;
+    height: 44px;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+    transition: width .5s;
+}
+
+.search.active .input {
+    visibility: visible;
+    width: 250px;
+}
+
+.search .input input {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    font-size: 18px;
+    background: #F2F1F0;
+}
+
+.clear {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 15px;
+    height: 15px;
+    right: 15px;
+    background: #0554F2;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.clear::before {
+    position: absolute;
+    content: '';
+    width: 1px;
+    height: 15px;
+    background: #999;
+    transform: rotate(45deg);
+}
+
+.clear::after {
+    position: absolute;
+    content: '';
+    width: 1px;
+    height: 15px;
+    background: #999;
+    transform: rotate(315deg);
+}
+
+@media (max-width: 768px) {
+    .base {
+        padding: 1em;
+    }
+}
+
+@media (max-width: 480px) {
+    .base {
+        padding: 0.5em;
+    }
+}

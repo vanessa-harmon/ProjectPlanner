@@ -1,18 +1,39 @@
-{% extends 'base.html' %}
+{% load static %}
 
-{% block title %}
-    Signup
-{% endblock title %}
-
-{% block content %}
-<main>
-    <div class="signup-form">
-        <h1>Signup</h1>
-        <form method="post">
-            {% csrf_token %}
-            {{ form.as_p }}
-            <button>Signup</button>
-        </form>
-    </div>
-</main>
-{% endblock content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        Sign Up!
+    </title>
+    <link rel="stylesheet" href="{% static 'css/accounts.css' %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dekko&display=swap" rel="stylesheet">
+</head>
+<body class="landing-page">
+    <header>
+        <nav class='navbar'>
+            <ul class='menuItem'>
+            Already have an account?
+            <a href="{% url 'login' %}">
+                Log In
+            </a>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="signup-form">
+            <h1>Signup</h1>
+            <form method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button>Signup</button>
+            </form>
+        </div>
+        <img src="https://img.freepik.com/free-vector/flat-design-business-planning-concept_23-2149151729.jpg" class='background'>
+    </main>
+</body>

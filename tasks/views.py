@@ -18,7 +18,7 @@ def create_task(request):
     context = {
         "form": form,
     }
-    return render(request, "projects/create.html", context)
+    return render(request, "tasks/create.html", context)
 
 
 @login_required

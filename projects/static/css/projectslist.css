@@ -1,0 +1,61 @@
+.projects {
+    position: absolute;
+    width: max-content;
+    height: max-content;
+    color: #195db6;
+}
+
+.calendar {
+    position: absolute;
+    left: 100px;
+    width: 200px;
+    height: auto;
+}
+
+.calendar img {
+    object-fit: cover;
+}
+
+.projects-list {
+    position: absolute;
+    left: 500px;
+    width: 800px;
+    height: 600px;
+    padding: 0 1rem;
+}
+
+.projects-list .child-element {
+    margin: 10px;
+    padding: 10px;
+}
+
+.projects-list a {
+    text-decoration: none;
+    color: #195db6;
+}
+
+.projects-list a:hover {
+    text-decoration: none;
+    color: white;
+}
+
+.upcoming {
+    position: absolute;
+    border: 2px solid #d65153;
+    margin: 2rem 0;
+    padding: 0.5rem;
+    width: 375px;
+    height: 200px;
+    left: 100px;
+    top: 300px;
+    text-wrap: nowrap;
+}
+
+.col {
+    margin-bottom: 40px;
+}
+
+.card-body {
+    height: 200px;
+    overflow: scroll;
+}

@@ -8,12 +8,12 @@
 <main>
     <div class="task-detail">
         <h1>{{ task.name }}</h1>
-        <p><a href="{% url 'add_notes_to_task' task.id %}">Add Notes</a></p>
+        <h4> for {{ task.project }} </h4>
+        <h6> Due {{ task.due_date }}</h6>
+
+        <button class='notesBtn'><a href="{% url 'add_notes_to_task' task.id %}">Add Notes</a><button>
         {% if task.notes %}
-        <p>Notes: {{ task.notes }}</p>
-        <!-- <p>Start Date: {{ task.start_date }}</p>
-        <p>Due Date: {{ task.due_date }}</p>
-        <p>Is Completed: {{ task.is_completed|yesno }}</p> -->
+        <p class='notes'>{{ task.notes }}</p>
         {% else %}
             <p>You have no notes for this task</p>
         {% endif %}

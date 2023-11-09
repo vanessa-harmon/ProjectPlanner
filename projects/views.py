@@ -2,6 +2,8 @@ from django.shortcuts import render, get_object_or_404, redirect
 from projects.models import Project
 from django.contrib.auth.decorators import login_required
 from projects.forms import ProjectForm
+from django.utils import timezone
+from tasks.models import Task
 
 
 # Create your views here.
@@ -46,3 +48,8 @@ def search_projects(request):
 
     else:
         return render(request, 'projects/search_projects.html')
+
+
+def upcoming_tasks(request):
+    upcoming_tasks = Task.objects.filter(due_date__gte=timezone.now()).order_by('due_date')
+    return render(request, 'projects/list.html', {'upcoming_tasks': upcoming_tasks})
