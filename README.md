@@ -1,8 +1,5 @@
 # Projectplanner
 
-- This project was developed and maintained by [Your Name]. It is a solo project, meaning that I was the sole contributor and made all the development decisions.
-
-
 Full Stack web application for organizing and tracking projects and tasks.
 
 ## Functionality
