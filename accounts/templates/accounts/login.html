@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>
-        LogIn!
+        Log in - ProjectPlanner
     </title>
 
     <link rel="stylesheet" href="{% static 'css/accounts.css' %}">
@@ -28,7 +28,9 @@
     </header>
     <main>
         <div class="login-form">
-            <h1>Log In</h1>
+
+            <h1>Welcome to ProjectPlanner!</h1>
+            <h4>To get started, please sign in</h4>
             <form method="post">
                 {% csrf_token %}
                 {{ form.as_p }}
