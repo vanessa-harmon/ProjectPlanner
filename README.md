@@ -1,48 +1,44 @@
 # Projectplanner
 
-Full Stack web application for organizing and tracking projects and tasks.
+ProjectPlanner is a full-stack web application designed to streamline project and task management. Tailored for individuals seeking an organized approach to their projects and tasks, this application offers intuitive features to enhance productivity.
 
 ## Functionality
 
-- My Projects: Add new projects projects list.
-- My Tasks: Add tasks to projects.
+- My Projects: Users can add new projects to their project list.
+- My Tasks: Tasks can be added to specific projects.
+- Search Functionality: Users can search for projects using keywords, resulting in a list of relevant projects.
 
 ## User Stories/Scenarios :cucumber:
 
-- `Given` a user is logged in, `When` they add a project to their projects list, `Then` the project is added to the projects list
-- `Given` a user is logged in, `When` they add a task to a project, `Then` the task will show under the projects details or 'My Tasks' page
-- `Given` a user is logged in, `When` they search a key word, `Then` a list of projects with that key word will populate
+- Adding Projects: When a logged-in user adds a project, it seamlessly integrates into their projects list.
+- Task Management: Users can add tasks to projects, and these tasks are displayed under project details or on the 'My Tasks' page.
+- Keyword Search: Users, when logged in, can search for projects using keywords, generating a list of projects associated with the search term.
 
 ## Intended Market
 
-Aimed at individuals looking to manage their project and tasks
+ProjectPlanner is aimed at individuals seeking an efficient solution for managing their projects and tasks. Whether you are a freelancer, entrepreneur, or a professional managing personal projects, ProjectPlanner provides a user-friendly platform to stay organized.
 
 ## Stretch goals
 
-- Enabling the calendar to update with tasks due dates 
-- Having a list of upcoming tasks 
-- The abilty to connect with other users working on a project with you 
+- Calendar Integration: Enhance functionality by enabling the calendar to update with task due dates.
+- Upcoming Tasks List: Implement a feature to display a list of upcoming tasks for better planning.
+- Collaboration: Enable users to connect with others working on the same project, fostering collaboration and communication.
 
 ## Onboarding
 
-- To use the application the way it was intended make sure to follow the steps below.
+To utilize ProjectPlanner effectively, follow these steps:
 
-1. Fork and clone the starter project from Project Alpha 
-2. Create a new virtual environment in the repository directory for the project
-3. Activate the virtual environment
-4. Upgrade pip
-5. Install django
-6. Install black
-7. Install flake8
-8. Install djlint
-9. Deactivate your virtual environment
-10. Activate your virtual environment
-11. Use pip freeze to generate a requirements.txt file
+1. Fork and clone the project.
+2. Create a new virtual environment in the repository directory.
+4. Activate the virtual environment and upgrade pip.
+5. Install Django, Black, Flake8, and Djlint.
+6. Deactivate and reactivate the virtual environment.
+7. Use pip freeze to generate a requirements.txt file.
 
 ## Tech Stack :books:
 
 - HTML5
-- django
+- Django
 - CSS
 - Bootstrap
 
